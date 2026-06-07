@@ -8,169 +8,108 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
   <style>
-    /* ===== INDEX-SPECIFIC STYLES ===== */
-    body {
-      background: #fdfaf6;
-      overflow-x: hidden;
-      margin: 0;
-    }
+    body { background: #FDF6EC; overflow-x: hidden; margin: 0; }
 
-    /* Dot pattern background */
+    /* Warm dot pattern background */
     .bg-pattern {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: radial-gradient(#FF8C5A 1.5px, transparent 1.5px);
-      background-size: 30px 30px;
-      opacity: 0.12;
-      z-index: -2;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: radial-gradient(#D9944E 1.5px, transparent 1.5px);
+      background-size: 32px 32px;
+      opacity: 0.1; z-index: -2;
     }
 
-    /* Soft color blobs */
+    /* Warm color blobs */
     .bg-blobs {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1; overflow: hidden; pointer-events: none;
     }
     .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.45;
-      animation: blobPulse 10s ease-in-out infinite alternate;
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: 0.35;
+      animation: blobPulse 12s ease-in-out infinite alternate;
     }
     @keyframes blobPulse {
       0%   { transform: scale(1) translate(0, 0); }
-      100% { transform: scale(1.12) translate(15px, -15px); }
+      100% { transform: scale(1.15) translate(20px, -20px); }
     }
-    .blob-1 { top: -15%; left: -10%; width: 55vw; height: 55vw; background: #FF6B2B; }
-    .blob-2 { bottom: -15%; right: -10%; width: 45vw; height: 45vw; background: #FFD60A; animation-delay: -5s; }
-    .blob-3 { top: 35%; left: 55%; width: 30vw; height: 30vw; background: #4FC3F7; opacity: 0.25; animation-duration: 14s; }
+    .blob-1 { top: -15%; left: -10%; width: 55vw; height: 55vw; background: #C17A3C; }
+    .blob-2 { bottom: -15%; right: -10%; width: 45vw; height: 45vw; background: #F0A830; animation-delay: -6s; }
+    .blob-3 { top: 35%; left: 55%; width: 30vw; height: 30vw; background: #E8A855; opacity: 0.2; animation-duration: 16s; }
 
     /* ===== LAYOUT ===== */
     .hero-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 1.5rem 1rem;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 1.5rem 1rem;
     }
 
-    /* Glass card — 2 columns on large, 1 column on mobile */
+    /* Warm glass card */
     .glass-card {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 2px solid rgba(255, 255, 255, 0.65);
+      background: rgba(253, 246, 236, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.7);
       border-radius: 32px;
-      box-shadow: 0 24px 50px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.5);
+      box-shadow: 0 24px 60px rgba(93,58,30,0.15), inset 0 0 0 1px rgba(255,255,255,0.55);
       padding: 2.5rem 2rem;
-      max-width: 960px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      max-width: 980px; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+      position: relative; overflow: hidden;
     }
-
-    /* Switch to single column on tablets and phones */
     @media (max-width: 768px) {
-      .glass-card {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem 1.5rem;
-        border-radius: 24px;
-      }
-      /* Show image first on mobile? No — keep text first */
+      .glass-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; border-radius: 24px; }
       .hero-image-wrapper { order: -1; }
     }
-
     @media (max-width: 480px) {
-      .glass-card {
-        padding: 1.5rem 1.2rem;
-        border-radius: 20px;
-        gap: 1.5rem;
-      }
+      .glass-card { padding: 1.5rem 1.2rem; border-radius: 20px; gap: 1.5rem; }
       .hero-container { padding: 1rem 0.75rem; }
     }
 
     /* ===== HERO TEXT SIDE ===== */
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      z-index: 2;
-    }
+    .hero-text { display: flex; flex-direction: column; gap: 1.2rem; z-index: 2; }
 
     .badge {
       align-self: flex-start;
-      background: linear-gradient(135deg, var(--orange-primary), var(--orange-dark));
-      color: white;
-      font-family: 'Fredoka One', cursive;
-      font-size: 1rem;
-      padding: 0.5rem 1.5rem;
+      background: linear-gradient(135deg, #C17A3C, #8B5A22);
+      color: white; font-family: 'Fredoka One', cursive;
+      font-size: 1rem; padding: 0.5rem 1.5rem;
       border-radius: 50px;
-      box-shadow: 0 6px 15px rgba(255,107,43,0.4);
-      animation: floatBadge 3s ease-in-out infinite;
-      letter-spacing: 1px;
+      box-shadow: 0 6px 18px rgba(193,122,60,0.4);
+      animation: floatBadge 3s ease-in-out infinite; letter-spacing: 1px;
     }
-
     @keyframes floatBadge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      0%,100% { transform: translateY(0) rotate(-1deg); }
+      50%      { transform: translateY(-6px) rotate(1deg); }
     }
 
     .main-title {
       font-family: 'Fredoka One', cursive;
       font-size: clamp(2.4rem, 5vw, 4rem);
-      line-height: 1.1;
-      color: var(--brown);
-      margin: 0;
-      letter-spacing: -1px;
+      line-height: 1.1; color: #5C3A1E;
+      margin: 0; letter-spacing: -1px;
     }
-
-    .main-title span {
-      color: var(--orange-primary);
-      display: block;
-      margin-top: 0.2rem;
-    }
+    .main-title span { color: #C17A3C; display: block; margin-top: 0.2rem; }
 
     .subtitle {
-      font-weight: 800;
-      color: var(--text-medium);
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      line-height: 1.6;
+      font-weight: 800; color: #6B4226;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem); line-height: 1.6;
     }
 
     /* ===== FORM ===== */
     .hero-form {
-      background: white;
-      padding: 1.8rem;
+      background: #FFFBF4; padding: 1.8rem;
       border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-      border: 3px solid var(--cream-dark);
-      z-index: 2;
+      box-shadow: 0 12px 30px rgba(93,58,30,0.1);
+      border: 3px solid #F0DDB8; z-index: 2;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     @media (hover: hover) {
-      .hero-form:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 40px rgba(0,0,0,0.1);
-      }
+      .hero-form:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(93,58,30,0.14); }
     }
-
     .hero-form h3 {
-      font-family: 'Fredoka One', cursive;
-      color: var(--orange-primary);
-      margin-bottom: 1.5rem;
-      font-size: 1.3rem;
-      text-align: center;
+      font-family: 'Fredoka One', cursive; color: #C17A3C;
+      margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;
     }
-
     @media (max-width: 480px) {
       .hero-form { padding: 1.4rem; }
       .hero-form h3 { font-size: 1.15rem; margin-bottom: 1rem; }
@@ -178,66 +117,56 @@
 
     /* ===== MASCOT IMAGE SIDE ===== */
     .hero-image-wrapper {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
+      position: relative; display: flex;
+      justify-content: center; align-items: center; z-index: 1;
     }
 
     .mascot-img {
-      width: 100%;
-      max-width: 380px;
+      width: 100%; max-width: 380px;
       border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-      border: 7px solid white;
+      box-shadow: 0 20px 50px rgba(93,58,30,0.22);
+      border: 7px solid #FFFBF4;
       transform: rotate(2deg);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       animation: floatMascot 6s ease-in-out infinite;
     }
-
     @media (hover: hover) {
-      .mascot-img:hover {
-        transform: rotate(0deg) scale(1.04);
-        box-shadow: 0 24px 48px rgba(0,0,0,0.22);
-      }
+      .mascot-img:hover { transform: rotate(0deg) scale(1.05); box-shadow: 0 26px 55px rgba(93,58,30,0.28); }
     }
-
-    @media (max-width: 768px) {
-      .mascot-img { max-width: 260px; }
-    }
-
-    @media (max-width: 480px) {
-      .mascot-img { max-width: 200px; border-width: 5px; }
-    }
+    @media (max-width: 768px) { .mascot-img { max-width: 260px; } }
+    @media (max-width: 480px) { .mascot-img { max-width: 200px; border-width: 5px; } }
 
     @keyframes floatMascot {
-      0%, 100% { transform: translateY(0) rotate(2deg); }
-      50% { transform: translateY(-16px) rotate(-1deg); }
+      0%,100% { transform: translateY(0) rotate(2deg); }
+      50%      { transform: translateY(-18px) rotate(-1deg); }
     }
 
-    /* Floating decorative math text inside card */
+    /* Floating math text inside card */
     .floating-math {
-      position: absolute;
-      font-family: 'Fredoka One', cursive;
-      color: rgba(255,107,43,0.18);
-      pointer-events: none;
-      z-index: 0;
-      user-select: none;
+      position: absolute; font-family: 'Fredoka One', cursive;
+      color: rgba(193,122,60,0.15); pointer-events: none; z-index: 0; user-select: none;
     }
-    .fm-1 { top: 6%; right: 6%; font-size: 1.5rem; animation: floatAround 8s infinite alternate; }
-    .fm-2 { bottom: 10%; left: 1%; font-size: 1.8rem; animation: floatAround 10s infinite alternate-reverse; color: rgba(79,195,247,0.25); }
-    .fm-3 { top: 30%; left: 42%; font-size: 2.5rem; color: rgba(255,214,10,0.35); animation: floatAround 12s infinite alternate; }
-    .fm-4 { bottom: 4%; right: 38%; font-size: 2rem; color: rgba(206,147,216,0.35); animation: floatAround 9s infinite alternate-reverse; }
+    .fm-1 { top: 6%;  right: 6%;  font-size: 1.5rem; animation: floatAround 8s infinite alternate; }
+    .fm-2 { bottom: 10%; left: 1%; font-size: 1.8rem; animation: floatAround 10s infinite alternate-reverse; color: rgba(240,168,48,0.2); }
+    .fm-3 { top: 30%; left: 42%; font-size: 2.5rem;  color: rgba(212,137,42,0.28); animation: floatAround 12s infinite alternate; }
+    .fm-4 { bottom: 4%; right: 38%; font-size: 2rem;  color: rgba(232,168,85,0.28); animation: floatAround 9s infinite alternate-reverse; }
+    @media (max-width: 480px) { .floating-math { display: none; } }
 
-    @media (max-width: 480px) {
-      .floating-math { display: none; }
+    /* Cute animated stars scattered */
+    .twinkle {
+      position: absolute; pointer-events: none; z-index: 0;
+      font-size: 1.2rem; animation: twinkleStar 3s ease-in-out infinite;
+    }
+    .twinkle:nth-child(odd)  { animation-delay: 1s; }
+    .twinkle:nth-child(even) { animation-delay: 2s; }
+    @keyframes twinkleStar {
+      0%,100% { opacity: 0.2; transform: scale(0.9) rotate(0deg); }
+      50%      { opacity: 0.7; transform: scale(1.2) rotate(15deg); }
     }
   </style>
 </head>
 <body>
 
-<!-- Background elements -->
 <div class="bg-pattern"></div>
 <div class="bg-blobs">
   <div class="blob blob-1"></div>
@@ -252,10 +181,14 @@
     <div class="floating-math fm-2">2 + 2 = 4</div>
     <div class="floating-math fm-3">✨</div>
     <div class="floating-math fm-4">➕</div>
+    <!-- Twinkling stars -->
+    <span class="twinkle" style="top:8%;left:30%;">⭐</span>
+    <span class="twinkle" style="top:70%;right:15%;">🌟</span>
+    <span class="twinkle" style="bottom:12%;left:38%;">✨</span>
 
     <!-- LEFT: Text + Form -->
     <div class="hero-text">
-      <div class="badge">Kelas 3 SD • 2026</div>
+      <div class="badge">🍪 Kelas 3 SD • 2026</div>
       <h1 class="main-title">E-LKPD <span>MATEMATIKA</span></h1>
       <p class="subtitle">Belajar Penjumlahan Berulang (Perkalian) jadi lebih seru, interaktif, dan menyenangkan! 🚀</p>
 
@@ -283,19 +216,20 @@
   </div>
 </main>
 
+<!-- Cute floating helper mascot -->
+<div class="helper-mascot" title="Semangat belajar! 🎉">🦉</div>
+
 <script src="js/shared.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Pre-fill if already visited
-    const savedNama = localStorage.getItem('elkpd_nama');
+    const savedNama  = localStorage.getItem('elkpd_nama');
     const savedKelas = localStorage.getItem('elkpd_kelas');
-    if (savedNama) document.getElementById('input-nama').value = savedNama;
+    if (savedNama)  document.getElementById('input-nama').value  = savedNama;
     if (savedKelas) document.getElementById('input-kelas').value = savedKelas;
 
     document.getElementById('btn-start').addEventListener('click', startLearning);
-
-    ['input-nama', 'input-kelas'].forEach(id => {
-      document.getElementById(id).addEventListener('keyup', (e) => {
+    ['input-nama','input-kelas'].forEach(id => {
+      document.getElementById(id).addEventListener('keyup', e => {
         if (e.key === 'Enter') startLearning();
       });
     });
@@ -317,12 +251,10 @@
     localStorage.setItem('elkpd_kelas', kelas);
 
     showConfetti();
-
     const card = document.querySelector('.glass-card');
     card.style.transition = 'all 0.5s ease';
     card.style.transform  = 'scale(0.95)';
     card.style.opacity    = '0';
-
     setTimeout(() => { window.location.href = 'petunjuk.html'; }, 600);
   }
 </script>

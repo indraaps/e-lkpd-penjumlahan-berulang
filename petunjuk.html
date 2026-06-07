@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petunjuk E-LKPD – Matematika Kelas 3 SD</title>
+  <meta name="description" content="Petunjuk penggunaan E-LKPD Matematika interaktif untuk siswa kelas 3 SD.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body>
+
+<!-- Floating background decorations -->
+<div class="float-deco">➕</div>
+<div class="float-deco">✖️</div>
+<div class="float-deco">🌟</div>
+<div class="float-deco">🔢</div>
+<div class="float-deco">🎯</div>
+<div class="float-deco">📐</div>
+
+<!-- Student info bar -->
+<div id="student-bar" class="student-info-bar">
+  <span id="display-nama">👤 </span>
+  <span>|</span>
+  <span id="display-kelas">🏫 </span>
+  <span>|</span>
+  <span>E-LKPD Matematika Kelas 3 SD</span>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a class="nav-brand" href="index.html">📚 E-LKPD</a>
+  <a class="nav-btn active" href="petunjuk.html">📋 Petunjuk</a>
+  <a class="nav-btn" href="cptp.html">🎯 CP & TP</a>
+  <a class="nav-btn" href="materi.html">📖 Materi</a>
+  <a class="nav-btn" href="latihan.html">✏️ Latihan Soal</a>
+  <a class="nav-btn" href="refleksi.html">💬 Refleksi</a>
+  <a class="nav-btn" href="pengembang.html">👤 Pengembang</a>
+</nav>
+
+<div class="page-content">
+  <div class="page-container">
+    <div class="page-header">
+      <span class="header-icon">📋</span>
+      <h1>Petunjuk E-LKPD</h1>
+      <p style="margin-top:0.5rem;opacity:0.9;font-size:0.95rem;position:relative;z-index:1;">
+        Baca dulu sebelum mulai belajar ya! 😊
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📌 Cara Menggunakan E-LKPD</div>
+      <ul class="petunjuk-list">
+        <li><div class="petunjuk-num">1</div> Bacalah setiap soal dan petunjuk dengan teliti sebelum menjawab.</li>
+        <li><div class="petunjuk-num">2</div> Ikuti urutan kegiatan dari awal hingga akhir secara berurutan.</li>
+        <li><div class="petunjuk-num">3</div> Kerjakan soal perkalian dengan sungguh-sungguh dan teliti.</li>
+        <li><div class="petunjuk-num">4</div> Gunakan cara yang sudah dipelajari (misalnya penjumlahan berulang atau cara cepat).</li>
+        <li><div class="petunjuk-num">5</div> Pilih jawaban yang benar pada soal interaktif yang tersedia.</li>
+        <li><div class="petunjuk-num">6</div> Jika ada kegiatan drag and drop, pasangkan soal dengan jawaban yang tepat.</li>
+        <li><div class="petunjuk-num">7</div> Jangan terburu-buru, periksa kembali jawabanmu sebelum melanjutkan.</li>
+        <li><div class="petunjuk-num">8</div> Jika mengalami kesulitan, diskusikan dengan teman atau tanyakan kepada guru.</li>
+        <li><div class="petunjuk-num">9</div> Kerjakan bagian refleksi untuk mengetahui pemahamanmu tentang perkalian.</li>
+      </ul>
+    </div>
+
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;justify-content:center;background:var(--cream-dark);border-radius:var(--radius-lg);padding:1.2rem;margin-bottom:1.5rem;">
+      <div style="text-align:center;padding:0.8rem 1.2rem;background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-card);flex:1;min-width:120px;">
+        <div style="font-size:2rem;">📖</div>
+        <div style="font-weight:800;font-size:0.85rem;color:var(--brown);margin-top:0.3rem;">Baca Materi</div>
+      </div>
+      <div style="display:flex;align-items:center;font-size:1.5rem;color:var(--orange-primary);">→</div>
+      <div style="text-align:center;padding:0.8rem 1.2rem;background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-card);flex:1;min-width:120px;">
+        <div style="font-size:2rem;">✏️</div>
+        <div style="font-weight:800;font-size:0.85rem;color:var(--brown);margin-top:0.3rem;">Kerjakan Soal</div>
+      </div>
+      <div style="display:flex;align-items:center;font-size:1.5rem;color:var(--orange-primary);">→</div>
+      <div style="text-align:center;padding:0.8rem 1.2rem;background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-card);flex:1;min-width:120px;">
+        <div style="font-size:2rem;">💬</div>
+        <div style="font-weight:800;font-size:0.85rem;color:var(--brown);margin-top:0.3rem;">Refleksi</div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <a class="btn btn-primary" href="cptp.html">Lanjut ke CP & TP →</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/shared.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!requireLogin()) return;
+    initStudentBar();
+  });
+</script>
+</body>
+</html>

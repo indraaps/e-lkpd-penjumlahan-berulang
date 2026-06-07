@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CP & TP – E-LKPD Matematika Kelas 3 SD</title>
+  <meta name="description" content="Capaian Pembelajaran dan Tujuan Pembelajaran E-LKPD Matematika kelas 3 SD.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body>
+
+<!-- Floating background decorations -->
+<div class="float-deco">➕</div>
+<div class="float-deco">✖️</div>
+<div class="float-deco">🌟</div>
+<div class="float-deco">🔢</div>
+<div class="float-deco">🎯</div>
+<div class="float-deco">📐</div>
+
+<!-- Student info bar -->
+<div id="student-bar" class="student-info-bar">
+  <span id="display-nama">👤 </span>
+  <span>|</span>
+  <span id="display-kelas">🏫 </span>
+  <span>|</span>
+  <span>E-LKPD Matematika Kelas 3 SD</span>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a class="nav-brand" href="index.html">📚 E-LKPD</a>
+  <a class="nav-btn" href="petunjuk.html">📋 Petunjuk</a>
+  <a class="nav-btn active" href="cptp.html">🎯 CP & TP</a>
+  <a class="nav-btn" href="materi.html">📖 Materi</a>
+  <a class="nav-btn" href="latihan.html">✏️ Latihan Soal</a>
+  <a class="nav-btn" href="refleksi.html">💬 Refleksi</a>
+  <a class="nav-btn" href="pengembang.html">👤 Pengembang</a>
+</nav>
+
+<div class="page-content">
+  <div class="page-container">
+    <div class="page-header">
+      <span class="header-icon">🎯</span>
+      <h1>Capaian & Tujuan Pembelajaran</h1>
+    </div>
+
+    <div class="cp-box">
+      <div class="card-title">📚 Capaian Pembelajaran (CP)</div>
+      <p style="font-weight:700;line-height:1.7;color:var(--text-medium);">
+        Peserta didik dapat melakukan operasi <strong style="color:var(--orange-primary);">perkalian</strong> dan
+        <strong style="color:var(--orange-primary);">pembagian</strong> bilangan cacah sampai 100
+        menggunakan benda-benda konkret, gambar, dan simbol matematika.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 Tujuan Pembelajaran (TP)</div>
+      <ul class="tp-list">
+        <li>
+          <span style="font-size:1.5rem;">💡</span>
+          <div>
+            <div style="font-weight:900;color:var(--orange-primary);">Tujuan 1</div>
+            Menjelaskan konsep perkalian sebagai penjumlahan berulang.
+          </div>
+        </li>
+        <li>
+          <span style="font-size:1.5rem;">🧮</span>
+          <div>
+            <div style="font-weight:900;color:var(--orange-primary);">Tujuan 2</div>
+            Menyelesaikan operasi perkalian sederhana dengan benar.
+          </div>
+        </li>
+        <li>
+          <span style="font-size:1.5rem;">✅</span>
+          <div>
+            <div style="font-weight:900;color:var(--orange-primary);">Tujuan 3</div>
+            Menentukan hasil operasi sederhana dengan tepat.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- What you will learn -->
+    <div style="background:linear-gradient(135deg,var(--orange-primary),var(--orange-dark));border-radius:var(--radius-xl);padding:1.5rem;color:white;text-align:center;box-shadow:var(--shadow-orange);">
+      <div style="font-family:'Fredoka One',cursive;font-size:1.3rem;margin-bottom:1rem;">Yang akan kamu pelajari hari ini:</div>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <div style="background:rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:0.8rem 1.2rem;font-weight:700;font-size:0.9rem;">
+          🔢 Penjumlahan berulang
+        </div>
+        <div style="background:rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:0.8rem 1.2rem;font-weight:700;font-size:0.9rem;">
+          ✖️ Notasi perkalian
+        </div>
+        <div style="background:rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:0.8rem 1.2rem;font-weight:700;font-size:0.9rem;">
+          📊 Kalimat matematika
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <a class="btn btn-secondary" href="petunjuk.html">← Petunjuk</a>
+      <a class="btn btn-primary" href="materi.html">Lihat Materi →</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/shared.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!requireLogin()) return;
+    initStudentBar();
+  });
+</script>
+</body>
+</html>

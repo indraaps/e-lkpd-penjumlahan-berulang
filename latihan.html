@@ -324,17 +324,18 @@ function resetFill() {
 }
 
 // ========== TABLE EXERCISE ==========
+// Data ini disesuaikan sepenuhnya dengan urutan gambar pelatihannya
 const tableData = [
-  { symbols: '★ ★\n★', groups: 3, perGroup: 3, given: true },
-  { symbols: '▲▲  ▲▲', groups: 2, perGroup: 2, given: false },
-  { symbols: '♥ ♥ ♥ ♥', groups: 4, perGroup: 1, given: false },
-  { symbols: '●● ●● ●●', groups: 3, perGroup: 2, given: false },
-  { symbols: '↕↕ ↕↕ ↕↕ ↕↕', groups: 4, perGroup: 2, given: false },
-  { symbols: '◆◆◆◆  ◆◆◆◆', groups: 2, perGroup: 4, given: false },
-  { symbols: '●● ●● ●● ●● ●●', groups: 5, perGroup: 2, given: false },
-  { symbols: '+ +\n+ +', groups: 2, perGroup: 2, given: false },
-  { symbols: '❋❋❋ ❋❋❋ ❋❋❋', groups: 3, perGroup: 3, given: false },
-  { symbols: '✕✕ ✕✕ ✕✕ ✕✕', groups: 4, perGroup: 2, given: false },
+  { symbols: '★ ★   ★ ★   ★ ★\n  ★     ★     ★', groups: 3, perGroup: 3, given: true },
+  { symbols: '▲▲    ▲▲\n▲▲    ▲▲', groups: 2, perGroup: 4, given: false },
+  { symbols: '♥   ♥   ♥   ♥', groups: 4, perGroup: 1, given: false },
+  { symbols: '●●   ●●   ●●\n●●   ●●   ●●\n●●   ●●   ●●', groups: 3, perGroup: 6, given: false },
+  { symbols: '↕↕   ↕↕   ↕↕   ↕↕\n↕↕   ↕↕   ↕↕   ↕↕', groups: 4, perGroup: 4, given: false },
+  { symbols: '◆◆◆◆   ◆◆◆◆\n◆◆◆◆   ◆◆◆◆', groups: 2, perGroup: 8, given: false },
+  { symbols: '● ●   ● ●   ● ●   ● ●   ● ●\n  ●     ●     ●     ●     ●\n● ●   ● ●   ● ●   ● ●   ● ●', groups: 5, perGroup: 5, given: false },
+  { symbols: '✦      ✦\n   ✦      ✦', groups: 2, perGroup: 2, given: false },
+  { symbols: '❋❋❋   ❋❋❋   ❋❋❋\n❋❋❋   ❋❋❋   ❋❋❋\n❋❋❋   ❋❋❋   ❋❋❋', groups: 3, perGroup: 9, given: false },
+  { symbols: '✕✕   ✕✕   ✕✕   ✕✕\n ✕    ✕    ✕    ✕', groups: 4, perGroup: 3, given: false }
 ];
 
 function buildTableSection() {
@@ -348,15 +349,17 @@ function buildTableSection() {
     const kalimat = `${d.groups} x ${d.perGroup} = ${total}`;
 
     const tr = document.createElement('tr');
+    
+    // Style pre-line disematkan agar susunan baris simbol (newline \n) terbaca rapi seperti gambar
     if (d.given) {
       tr.innerHTML = `
-        <td class="symbol-cell">${d.symbols}</td>
+        <td class="symbol-cell" style="white-space: pre-line; line-height: 1.2;">${d.symbols}</td>
         <td class="given-cell">${addStr}</td>
         <td class="given-cell">${notasi}</td>
         <td class="given-cell">${kalimat}</td>`;
     } else {
       tr.innerHTML = `
-        <td class="symbol-cell">${d.symbols}</td>
+        <td class="symbol-cell" style="white-space: pre-line; line-height: 1.2;">${d.symbols}</td>
         <td><input type="text" class="table-input" placeholder="... + ... = ..."
           data-answer="${addStr}" data-idx="${idx}" data-col="add"></td>
         <td><input type="text" class="table-input" placeholder="... x ..."
